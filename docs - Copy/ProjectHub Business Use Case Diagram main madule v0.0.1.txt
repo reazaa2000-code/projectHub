@@ -1,0 +1,33 @@
+ProjectHub
+
+├── Authentication & Authorization
+│
+├── Student Management
+│
+├── Course Management
+│
+├── Class Management
+│
+├── Academic Term Management
+│
+├── Enrollment Management
+│
+├── Attendance Management
+│
+├── Assessment Management
+│
+├── Certificate Management
+│
+├── Instructor Portal
+│
+├── Public Website
+│
+├── Course Material Management
+│
+├── Employee Management
+│
+├── Organization Management
+│
+├── Reporting & Dashboard
+│
+└── System Administration
