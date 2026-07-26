@@ -1,0 +1,47 @@
+@startuml UC-005-Register-Student-Activity
+
+title UC-005 Register Student
+
+start
+
+:Open Student Management;
+
+:Select Register Student;
+
+:System displays registration form;
+
+:Enter Student Information;
+
+:Submit Form;
+
+:System validates information;
+
+if (Validation OK?) then (Yes)
+
+    :Check National ID;
+
+    if (Already Exists?) then (Yes)
+
+        :Display Duplicate Error;
+
+    else (No)
+
+        :Generate Student Number;
+
+        :Create Student;
+
+        :Save Audit Information;
+
+        :Display Success Message;
+
+    endif
+
+else (No)
+
+    :Display Validation Errors;
+
+endif
+
+stop
+
+@enduml

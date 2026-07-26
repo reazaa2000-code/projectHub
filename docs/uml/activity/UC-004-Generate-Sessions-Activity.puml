@@ -1,0 +1,43 @@
+@startuml UC-004-Generate-Sessions-Activity
+
+title UC-004 Generate Sessions
+
+start
+
+:Open Class;
+
+:Select Generate Sessions;
+
+:Load Weekly Schedule;
+
+:Calculate Session Dates;
+
+:Calculate Session Count;
+
+if (Count matches Course?) then (Yes)
+
+    :Check Holidays;
+
+    if (Holiday Found?) then (Yes)
+
+        :Display Warning;
+
+    endif
+
+    :Generate Sessions;
+
+    :Assign Session Numbers;
+
+    :Save Sessions;
+
+    :Display Success;
+
+else (No)
+
+    :Display Error;
+
+endif
+
+stop
+
+@enduml

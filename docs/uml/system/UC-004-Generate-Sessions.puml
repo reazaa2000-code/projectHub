@@ -1,0 +1,31 @@
+@startuml UC-004-Generate-Sessions
+
+left to right direction
+
+actor "Education Officer" as EO
+
+rectangle ProjectHub {
+
+usecase "Generate Sessions" as UC
+
+usecase "Load Schedule" as LS
+
+usecase "Calculate Dates" as CD
+
+usecase "Validate Session Count" as VC
+
+usecase "Check Holidays" as CH
+
+usecase "Create Sessions" as CS
+
+}
+
+EO --> UC
+
+UC ..> LS : <<include>>
+UC ..> CD : <<include>>
+UC ..> VC : <<include>>
+UC ..> CH : <<include>>
+UC ..> CS : <<include>>
+
+@enduml

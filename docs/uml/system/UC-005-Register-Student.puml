@@ -1,0 +1,38 @@
+@startuml UC-005-Register-Student
+
+left to right direction
+
+skinparam actorStyle awesome
+
+actor "Education Officer" as EO
+
+rectangle "ProjectHub" {
+
+usecase "Register Student" as UC
+
+usecase "Validate Student Information" as Validate
+
+usecase "Check Duplicate National ID" as Duplicate
+
+usecase "Generate Student Number" as Generate
+
+usecase "Create Student Record" as Create
+
+}
+
+EO --> UC
+
+UC ..> Validate : <<include>>
+UC ..> Duplicate : <<include>>
+UC ..> Generate : <<include>>
+UC ..> Create : <<include>>
+
+note right of Generate
+
+Student Number Format
+
+PH-1405-000001
+
+end note
+
+@enduml
