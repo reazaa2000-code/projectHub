@@ -1,0 +1,73 @@
+@startuml UC-003-Create-Class
+'====================================================
+' ProjectHub
+' System Use Case Diagram
+' UC-003 - Create Class
+' Version: 0.1
+'====================================================
+
+left to right direction
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+
+title ProjectHub - UC-003 Create Class
+
+actor "Education Officer" as EO
+
+rectangle "ProjectHub Training Management System" {
+
+    usecase "UC-003\nCreate Class" as UC_CreateClass
+
+    usecase "Validate Input" as UC_Validate
+
+    usecase "Load Course Defaults" as UC_LoadCourse
+
+    usecase "Assign Instructor(s)" as UC_AssignInstructor
+
+    usecase "Select Academic Term" as UC_SelectTerm
+
+    usecase "Configure Schedule" as UC_Schedule
+
+    usecase "Configure Delivery Type" as UC_Delivery
+
+    usecase "Configure Capacity" as UC_Capacity
+
+    usecase "Configure Tuition" as UC_Tuition
+
+    usecase "Create Draft Class" as UC_CreateDraft
+}
+
+EO --> UC_CreateClass
+
+UC_CreateClass ..> UC_LoadCourse : <<include>>
+
+UC_CreateClass ..> UC_AssignInstructor : <<include>>
+
+UC_CreateClass ..> UC_SelectTerm : <<include>>
+
+UC_CreateClass ..> UC_Schedule : <<include>>
+
+UC_CreateClass ..> UC_Delivery : <<include>>
+
+UC_CreateClass ..> UC_Capacity : <<include>>
+
+UC_CreateClass ..> UC_Tuition : <<include>>
+
+UC_CreateClass ..> UC_Validate : <<include>>
+
+UC_CreateClass ..> UC_CreateDraft : <<include>>
+
+note right of UC_CreateDraft
+
+Initial Status = Draft
+
+Students cannot enroll
+
+until status becomes
+
+Open for Enrollment
+
+end note
+
+@enduml

@@ -1,0 +1,86 @@
+@startuml UC-003-Create-Class-Activity
+
+title ProjectHub
+title UC-003 - Create Class
+title Activity Diagram
+
+start
+
+:Education Officer opens
+Class Management;
+
+:Select "Create Class";
+
+:System displays
+Create Class form;
+
+:Select Course;
+
+:System loads
+Course defaults;
+
+:Enter Class information;
+
+:Assign Instructor(s);
+
+:Select Academic Term;
+
+:Configure Schedule;
+
+:Select Delivery Type;
+
+:Enter Capacity;
+
+:Enter Tuition Fee;
+
+:Submit Form;
+
+:System validates
+entered information;
+
+if (Validation OK?) then (Yes)
+
+    if (Course exists?) then (Yes)
+
+        if (Instructor assigned?) then (Yes)
+
+            if (Capacity > 0?) then (Yes)
+
+                :Create Class;
+
+                :Set Status = Draft;
+
+                :Store Audit Information;
+
+                :Display Success Message;
+
+            else (No)
+
+                :Display
+                Invalid Capacity Error;
+
+            endif
+
+        else (No)
+
+            :Display
+            Instructor Required Error;
+
+        endif
+
+    else (No)
+
+        :Display
+        Course Not Found Error;
+
+    endif
+
+else (No)
+
+    :Display Validation Errors;
+
+endif
+
+stop
+
+@enduml
