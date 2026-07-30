@@ -1,0 +1,65 @@
+@startuml UC-006-Create-Enrollment-Activity
+
+title UC-006 Create Enrollment
+
+start
+
+:Select Student;
+
+:Select Class;
+
+:Validate Student;
+
+:Validate Class;
+
+if (Class Open?) then (Yes)
+
+    :Check Capacity;
+
+    if (Capacity Available?) then (Yes)
+
+        :Check Session Overlap;
+
+        if (Conflict?) then (Yes)
+
+            :Display Conflict Error;
+
+        else (No)
+
+            :Determine Tuition;
+
+            if (Tuition = 0?) then (Yes)
+
+                :Status = Enrolled;
+
+            else (No)
+
+                :Status = Pending Payment;
+
+            endif
+
+            :Generate Enrollment Date;
+
+            :Create Enrollment;
+
+            :Save Audit;
+
+            :Display Success;
+
+        endif
+
+    else
+
+        :Display Capacity Error;
+
+    endif
+
+else
+
+    :Display Class Closed Error;
+
+endif
+
+stop
+
+@enduml

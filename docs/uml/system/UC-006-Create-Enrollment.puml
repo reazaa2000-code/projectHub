@@ -1,0 +1,43 @@
+@startuml UC-006-Create-Enrollment
+
+left to right direction
+
+actor "Education Officer" as EO
+
+rectangle ProjectHub {
+
+usecase "Create Enrollment" as UC
+
+usecase "Validate Student" as VS
+
+usecase "Validate Class" as VC
+
+usecase "Check Capacity" as CC
+
+usecase "Check Session Conflicts" as SC
+
+usecase "Determine Tuition" as DT
+
+usecase "Generate Enrollment Date" as ED
+
+usecase "Create Enrollment Record" as CER
+
+}
+
+EO --> UC
+
+UC ..> VS : <<include>>
+
+UC ..> VC : <<include>>
+
+UC ..> CC : <<include>>
+
+UC ..> SC : <<include>>
+
+UC ..> DT : <<include>>
+
+UC ..> ED : <<include>>
+
+UC ..> CER : <<include>>
+
+@enduml
