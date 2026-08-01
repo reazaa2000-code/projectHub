@@ -1,0 +1,44 @@
+@startuml ERD-Level1
+
+hide circle
+
+entity User
+
+entity Employee
+entity Instructor
+entity Student
+
+entity Course
+entity CoursePrerequisite
+
+entity AcademicTerm
+
+entity Class
+entity ClassInstructor
+entity Session
+
+entity Enrollment
+
+User ||--o| Employee
+
+User ||--o| Instructor
+
+User ||--o| Student
+
+Course ||--o{ Class
+
+Course ||--o{ CoursePrerequisite
+
+AcademicTerm ||--o{ Class
+
+Class ||--o{ Session
+
+Student ||--o{ Enrollment
+
+Class ||--o{ Enrollment
+
+Instructor ||--o{ ClassInstructor
+
+Class ||--o{ ClassInstructor
+
+@enduml

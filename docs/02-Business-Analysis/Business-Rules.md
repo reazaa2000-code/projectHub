@@ -34,7 +34,7 @@ A student cannot enroll in two Classes with completely overlapping schedules.
 
 ## BR-004
 Enrollment belongs to a Class, not to a Course.
-
+and A Student cannot enroll in a Class if any Session of that Class overlaps in date and time with any Session of another active Enrollment.
 ---
 
 ## BR-005

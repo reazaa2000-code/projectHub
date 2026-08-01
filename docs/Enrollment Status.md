@@ -1,0 +1,6 @@
+Pending Payment
+Enrolled
+Cancelled
+Completed
+Failed
+Withdrawn
