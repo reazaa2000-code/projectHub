@@ -1,5 +1,31 @@
 # Data Dictionary v1.0
 
+# Global Database Standards
+
+## Primary Key
+
+All entities use:
+
+Id
+
+as the Primary Key.
+
+## Foreign Keys
+
+Foreign Keys use the referenced entity name.
+
+Examples
+
+CourseId
+
+StudentId
+
+InstructorId
+
+EnrollmentId
+
+AcademicTermId
+
 ## Core Entities
 
 | Entity | Purpose |

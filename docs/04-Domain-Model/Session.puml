@@ -1,0 +1,39 @@
+@startuml
+
+entity "Class" as Class {
+    * Id : bigint
+}
+
+entity "Instructor" as Instructor {
+    * Id : bigint
+}
+
+entity "Session" as Session {
+
+    * Id : bigint
+
+    --
+
+    ClassId
+
+    InstructorId
+
+    SessionNumber
+
+    SessionDate
+
+    StartTime
+
+    EndTime
+
+    Status
+
+    Location
+
+}
+
+Class ||--o{ Session
+
+Instructor ||--o{ Session
+
+@enduml
