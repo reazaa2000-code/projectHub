@@ -60,3 +60,23 @@ Category (1) ------ (N) Course
 Course contains educational information only.
 
 Schedules, instructors, tuition and capacity belong to Class.
+
+# Attributes
+
+Inherited from BaseEntity
+
+- Id
+- CreatedAt
+- UpdatedAt
+- CreatedBy
+- UpdatedBy
+
+Course Attributes
+
+- CourseCode
+- Title
+- Description
+- CategoryId
+- Level
+- DurationHours
+- IsActive

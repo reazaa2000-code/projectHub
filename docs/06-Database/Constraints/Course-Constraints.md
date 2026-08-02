@@ -41,23 +41,18 @@ DurationHours > 0
 Level IN (1,2,3)
 
 ---
-
 Foreign Keys
 
 CategoryId
-
 → Category
 
 CreatedBy
-
-→ User
+→ User (Inherited from BaseEntity)
 
 UpdatedBy
-
-→ User
+→ User (Inherited from BaseEntity)
 
 ---
-
 Delete Rule
 
 Physical Delete NOT recommended.
