@@ -1,0 +1,51 @@
+@startuml
+
+entity "Student" {
+
+* Id
+
+--
+
+StudentCode
+
+FirstName
+
+LastName
+
+NationalCode
+
+BirthDate
+
+Gender
+
+Mobile
+
+Phone
+
+Email
+
+Address
+
+Status
+
+UserId
+
+}
+
+entity "Enrollment" {
+
+Id
+
+}
+
+entity "User" {
+
+Id
+
+}
+
+Student ||--o{ Enrollment
+
+User ||--o| Student
+
+@enduml

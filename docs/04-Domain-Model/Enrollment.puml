@@ -1,0 +1,27 @@
+@startuml
+
+entity Student
+
+entity Class
+
+entity Enrollment {
+
+* Id
+
+--
+
+StudentId
+
+ClassId
+
+EnrollmentDate
+
+Status
+
+}
+
+Student ||--o{ Enrollment
+
+Class ||--o{ Enrollment
+
+@enduml
