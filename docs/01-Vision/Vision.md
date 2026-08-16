@@ -10,7 +10,7 @@ Author: Business Analyst
 
 # 1. Vision
 
-ProjectHub is a centralized Training Management System designed for small and medium-sized educational institutes.
+ ProjectHub is a centralized Training Management System designed for small and medium-sized educational institutes.
 
 The system aims to replace scattered spreadsheets, paper-based processes and disconnected software with a single integrated platform that manages the entire educational lifecycle.
 

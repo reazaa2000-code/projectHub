@@ -19,7 +19,7 @@ It is intended for planning purposes only and may evolve as business priorities 
 
 # 2. Product Vision
 
-ProjectHub will become an integrated Educational ERP platform for training institutes.
+ ProjectHub will become an integrated Educational ERP platform for training institutes.
 
 The MVP focuses on educational operations.
 Future releases will gradually introduce finance, HR and organizational management.
