@@ -18,4 +18,9 @@
     <Using Include="Xunit" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ProjectHub.Domain\ProjectHub.Domain.csproj" />
+    <ProjectReference Include="..\..\src\ProjectHub.Application\ProjectHub.Application.csproj" />
+  </ItemGroup>
+
 </Project>
