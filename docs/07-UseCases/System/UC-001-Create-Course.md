@@ -1,6 +1,6 @@
 # UC-001 — Create Course
 
-Version: 0.1
+Version: 1.0.0
 Status: Draft
 Sprint: Sprint 1
 Priority: High

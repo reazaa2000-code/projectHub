@@ -29,6 +29,8 @@ Enrollment is responsible for
 
 Financial information is intentionally excluded from Sprint 1.
 
+The initial Enrollment status is `Registered`. Payment state is a future Payment concern.
+
 ---
 
 # Relationships
@@ -54,6 +56,8 @@ ExamResult (Future)
 - A Student cannot register twice in the same Class.
 - RegistrationDate is mandatory.
 - Enrollment Status controls educational progress.
+- Initial status is `Registered`.
+- `Pending Payment` is not an Enrollment status in v1.
 - Capacity must be checked before registration.
 - Prerequisites are informational only in Sprint 1.
 - Financial validation is deferred to future sprints.

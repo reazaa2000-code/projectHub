@@ -1,5 +1,8 @@
 # Data Dictionary — Student
 
+Version: 1.0.0
+Status: Approved Baseline
+
 | Column | SQL Type | Null | Key | Source | Description |
 |----------|----------|------|------|--------|-------------|
 | Id | bigint | No | PK | BaseEntity | Internal identifier |

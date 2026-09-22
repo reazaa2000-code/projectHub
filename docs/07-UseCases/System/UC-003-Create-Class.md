@@ -85,14 +85,14 @@ If the selected Default Instructor has a scheduling conflict with another Class:
 
 ### Initial Status
 - Every newly created Class starts in **Draft** status.
-- Students cannot enroll until the status changes to **Open for Enrollment**.
+- Students cannot enroll until the status changes to **Open**.
 
 ### Class Status
 Supported statuses:
 - Draft
-- Open for Enrollment
+- Open
 - Full
-- In Progress
+- InProgress
 - Completed
 - Cancelled
 
@@ -122,7 +122,7 @@ Supported statuses:
 - **BR-011:** Each Class belongs to exactly one Course.
 - **BR-012:** A Course may have multiple Classes.
 - **BR-013:** Every Class starts in one Academic Term.
-- **BR-014:** Supported Delivery Types (In-Person, Online, Organization, Hybrid).
+- **BR-014:** Supported Delivery Types (In-Person, Online, Corporate, Hybrid).
 - **BR-015:** Every Class has a defined Capacity.
 - **BR-016:** Online Classes may have very large capacities.
 - **BR-017:** A newly created Class is initially in Draft status.

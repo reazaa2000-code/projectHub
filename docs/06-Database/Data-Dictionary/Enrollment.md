@@ -1,5 +1,8 @@
 # Data Dictionary — Enrollment
 
+Version: 1.0.0
+Status: Approved Baseline
+
 | Column | SQL Type | Null | Key | Description |
 |----------|-----------|------|------|-------------|
 | Id | bigint | No | PK | Internal identifier |

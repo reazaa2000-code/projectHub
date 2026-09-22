@@ -1,7 +1,7 @@
 # ProjectHub
 # Business Rules
-Version: 1.0.0
-Status: Approved Baseline
+Version: 0.2.0
+Status: Approved
 Owner: Product Owner
 Author: Business Analyst
 
@@ -9,37 +9,51 @@ Author: Business Analyst
 
 # 1. Purpose
 
-This document defines the business rules governing ProjectHub.
-Rules are independent of implementation technology.
+This document defines the business rules governing the ProjectHub Training Management System.
+
+Business Rules are independent of implementation and must be enforced regardless of the technology used.
 
 ---
 
 # 2. Enrollment Rules
 
 ## BR-001
-A Student cannot enroll in a Class whose capacity has been reached.
+A student cannot enroll in a Class whose capacity has been reached.
+
+---
 
 ## BR-002
-A Student cannot enroll in the same Class more than once.
+A student cannot enroll in the same Class more than once.
+
+---
 
 ## BR-003
-A Student cannot enroll in two Classes when any Session of the two Classes overlaps in date and time.
+A student cannot enroll in two Classes with completely overlapping schedules.
+
+---
 
 ## BR-004
 Enrollment belongs to a Class, not to a Course.
+and A Student cannot enroll in a Class if any Session of that Class overlaps in date and time with any Session of another active Enrollment.
+---
 
 ## BR-005
-Creating an Enrollment records the Student's registration in the Class with initial status `Registered`.
+Enrollment is not completed until payment is successful.
 
-Payment processing is outside the Enrollment lifecycle in the current baseline and will be introduced through the future Payment module.
+Exception:
+If the Class tuition is zero, enrollment is completed immediately.
+
+---
 
 ## BR-006
-A Class with zero tuition still requires a formal Enrollment.
+A Class with zero tuition still requires a formal enrollment.
 
-Capacity and all other enrollment rules remain applicable.
+Capacity and all enrollment rules remain applicable.
+
+---
 
 ## BR-007
-A Student may receive discounts according to institute policies.
+A student may receive discounts according to institute policies.
 
 Discount calculation rules will be implemented in future phases.
 
@@ -50,18 +64,17 @@ Discount calculation rules will be implemented in future phases.
 ## BR-008
 Each Course may have zero or more prerequisite Courses.
 
+---
+
 ## BR-009
 Prerequisites are advisory only.
 
 Students may enroll without completing prerequisite Courses.
 
+---
+
 ## BR-010
 Each Course belongs to exactly one Category.
-
-## BR-010A
-`DefaultSessionCount` is a positive default/template number of Sessions used when creating a Class.
-
-It does not represent the actual number of Sessions of a Class.
 
 ---
 
@@ -70,44 +83,62 @@ It does not represent the actual number of Sessions of a Class.
 ## BR-011
 Each Class belongs to exactly one Course.
 
+---
+
 ## BR-012
 A Course may have multiple Classes.
 
+---
+
 ## BR-013
-Every Class belongs to one Academic Term.
+Every Class starts in one Academic Term.
 
 A Class may continue into later months.
 
-## BR-014
-Supported Delivery Type codes are:
+---
 
-- InPerson
+## BR-014
+Supported Delivery Types are:
+
+- In-Person
 - Online
-- Corporate
+- Organization
 - Hybrid
+
+Delivery Type is independent from Venue.
+
+---
 
 ## BR-015
 Every Class has a defined Capacity.
 
 Capacity is configurable.
 
+---
+
 ## BR-016
 Online Classes may have very large capacities.
 
-The system shall not impose a fixed business maximum for Online Classes.
+The system shall not impose a fixed maximum capacity.
+
+---
 
 ## BR-017
-A newly created Class starts in `Draft` status.
+A newly created Class is initially in Draft status.
 
-Students cannot enroll until the Class is `Open`.
+Students cannot enroll until the Class is opened for enrollment.
+
+---
 
 ## BR-018
 A Class consists of one or more Sessions.
 
-## BR-019
-Sessions are generated from the scheduling pattern.
+---
 
-Education Officer may edit generated Sessions according to the applicable rules.
+## BR-019
+Sessions are automatically generated from the scheduling pattern.
+
+Education Officer may edit generated Sessions.
 
 ---
 
@@ -122,8 +153,12 @@ Each Session has:
 - End Time
 - Status
 
+---
+
 ## BR-021
 Two Sessions belonging to the same Class cannot overlap.
+
+---
 
 ## BR-022
 Attendance is recorded for each Session.
@@ -135,16 +170,24 @@ Attendance is recorded for each Session.
 ## BR-023
 An Instructor cannot teach two Classes at the same time.
 
+---
+
 ## BR-024
 An Instructor may upload learning materials only for assigned Classes.
 
+---
+
 ## BR-025
 An Instructor may view and manage only assigned Classes.
+
+---
 
 ## BR-026
 An Instructor may define available teaching times.
 
 These availability records assist Education Officers during scheduling.
+
+---
 
 ## BR-027
 An Instructor may be replaced during the lifecycle of a Class.
@@ -157,6 +200,8 @@ The institute must preserve instructor assignment history.
 
 ## BR-028
 Attendance percentage is calculated using Session attendance.
+
+---
 
 ## BR-029
 Minimum attendance required for certificate eligibility is 70%.
@@ -174,6 +219,8 @@ Assessment methods may include:
 - Final Project
 - Both
 
+---
+
 ## BR-031
 Passing score is 12 out of 20.
 
@@ -182,10 +229,14 @@ Passing score is 12 out of 20.
 # 9. Certificate Rules
 
 ## BR-032
-Only Students who successfully complete a Class may receive a Certificate.
+Only students who successfully complete the Class may receive a Certificate.
+
+---
 
 ## BR-033
 Each Certificate must have a unique certificate number.
+
+---
 
 ## BR-034
 Each Certificate must be verifiable online.
@@ -195,7 +246,7 @@ Each Certificate must be verifiable online.
 # 10. Learning Material Rules
 
 ## BR-035
-Learning materials are accessible only to Students enrolled in the corresponding Class.
+Learning materials are accessible only to students enrolled in the corresponding Class.
 
 ---
 
@@ -208,26 +259,14 @@ Calendar validation assists scheduling but does not automatically prevent Sessio
 
 ---
 
-# 12. Student Rules
+# 12. Future Phase Rules
 
-## BR-037
-Canonical Student Status values are `Active` and `Inactive`.
-
-## BR-038
-A Student is never physically deleted.
-
-## BR-039
-National Code is immutable after Student registration.
-
----
-
-# 13. Deferred Rules
-
-The following are intentionally deferred:
+The following rules are intentionally deferred to future phases:
 
 - Automatic refund processing
-- Financial workflows
+- Automatic class cancellation
 - Organization contracts
+- Financial workflows
 - Approval workflows
 - Branch management
 - Group enrollment
@@ -239,4 +278,22 @@ The following are intentionally deferred:
 
 # Rule Management
 
-Every Business Rule has a unique identifier and may be referenced by use cases, user stories, acceptance criteria, tests, source code and ADRs.
+Every Business Rule shall have a unique identifier.
+
+Business Rules may be referenced from:
+
+- Business Use Cases
+- System Use Cases
+- User Stories
+- Acceptance Criteria
+- Test Cases
+- Source Code
+- Architecture Decision Records (ADR)
+
+---
+
+# Version History
+
+| Version | Date | Description |
+|----------|------|-------------|
+| 0.2.0 | 2026 | Initial Business Rules |

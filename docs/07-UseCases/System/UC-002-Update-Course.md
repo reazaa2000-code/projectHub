@@ -1,6 +1,6 @@
 # UC-002 — Update Course
 
-Version: 0.1
+Version: 1.0.0
 Status: Approved
 Sprint: Sprint 1
 Priority: High

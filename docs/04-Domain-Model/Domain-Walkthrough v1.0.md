@@ -81,6 +81,7 @@ A Course contains:
 * Duration
 * Description
 * Optional prerequisites
+* Default Session Count (template/default)
 
 A Course never contains scheduling information.
 
