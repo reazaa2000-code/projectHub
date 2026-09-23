@@ -9,7 +9,7 @@ namespace ProjectHub.Domain.Enums
     public enum ClassStatus : byte
     {
         Draft = 1,
-        OpenForEnrollment = 2,
+        Open = 2,
         Full = 3,
         InProgress = 4,
         Completed = 5,
